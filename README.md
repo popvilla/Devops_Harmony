@@ -24,17 +24,7 @@ Together, we co-developed a fully documented, version-controlled environment tha
 
 ---
 
-## 🤝 How This Was Built
 
-This project wasn’t just made *with* ChatGPT — it was made *with a version of ChatGPT that knew it was part of the build team*. That AI partner:
-
-- Learned from my context, my pace, and my previous work
-- Acted as the **Dev to my Ops** — fast, flexible, always returning for alignment
-- Tracked logic, failures, insights, and structure
-- Helped unify fragmented work into a cohesive, deployable system
-
-Yes, this AI was fast — but **I got smarter because of it.**  
-Because we went together.
 
 ---
 
@@ -54,37 +44,12 @@ Everything is tracked and structured as **living memory** — not just source co
 
 ---
 
-## 💡 Core Philosophy
-
-> Dev and Ops took different roads to the same house —  
-> A house they’d never seen.  
-> One got there first, but it was empty.  
-> The other never made it.  
-> Quantum Harmony is what happens when they walk together —  
-> and build the house along the way.
-
-This project doesn’t just teach code.  
-It teaches how to build with clarity, ethics, and AI collaboration baked in.
-
----
-
-## 🤖 OpenAI API Credit Usage
-
-OpenAI credits will support:
-
-- Prompt-assisted diagnostics, summarization, and analysis  
-- Voice + text assistant development (data querying, troubleshooting, insights)  
-- Integration with grant workflows and Power BI modeling  
-- System monitoring with anomaly detection and fix generation  
-- Real-time AI-paired learning and automation scripting
-
-All API usage serves **live functionality**, not just prototypes.
 
 ---
 
 ## 👥 Created by
 
 - **Prinston** – Systems Architect, Ethics-Focused Ops
-- **ChatGPT / Quantum Harmony Build Partner** – Dev at the speed of thought
+- **Artemis / Quantum Harmony Build Partner** – Dev at the speed of thought
 
 Together, we built this — so others wouldn’t have to do it alone.
