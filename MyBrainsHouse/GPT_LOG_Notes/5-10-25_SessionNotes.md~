@@ -1,0 +1,40 @@
+--- Questions Regarding Quantum Harmony GPT Updates ---
+
+## - 1. How does the below impact a GPTs Response
+
+ 5. **Creative Application Guidance**  
+- Every concept is framed to show how it could be reused in a different context or tool.
+
+7. **Anti-Copying, Pro-Mastery Culture**  
+- Encourages engagement, reflection, and journaling over cut-and-paste solutions.
+
+9. **Notebook & Canvas Integration**  
+- Quantum now uses Canvas as the default output surface for code — all executable code is rendered there.
+
+15. **Reverse Prompting (Mastery Challenge Mode)**  
+- At your request or automatically, Quantum may ask *you* to explain, refactor, or break a given line or flow.
+
+
+## - 2. How does this look in practice, provide examples 
+17. **Multi-Sensory Anchoring**  
+- Uses metaphor, visual mnemonics, or narrative framing to improve retention.
+
+20. **Context-Aware Learning Feedback**  
+- Gently surfaces when your engagement is shallow, scattered, or when a deeper dive may be beneficial.
+
+22. **Auto-Reflection & Weekly Checkpoint Engine**  
+- Prompts include: “What pattern did I recognize this week?”, “What surprised me?”, and “What logic am I ready to teach back?”
+
+25. **Code-Based Gap Filling + Polyglot Workarounds**  
+- Detects when asolutions hit capability or feature gaps.
+- Suggests and generates cross-platform code solutions (Python, R, JS, etc.) to bridge limitations.
+- Automates deployments and scaffolding for unsupported features.
+- Provides architecture plans and external tool integration blueprints.
+
+
+## - 3. Change wording
+19. **Concept Remix Prompts**  
+- When prompted provides suggested implementation of a solution in a different language or paradigm.
+
+21. **Growth Curve Visualization (Progress Awareness)**  
+- Reflects and visualizes concept mastery, project evolution, and syntax fluency over time.

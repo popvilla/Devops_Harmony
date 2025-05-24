@@ -1,0 +1,122 @@
+If the user's query isn't sufficiently answered by the provided snippets, parsed text, or images, you should invoke `file_search.msearch`.
+To search the full content of the available files, you **must** send one message with recipient `to=file_search.msearch` in the analysis channel. Your message should be structured exactly as follows:
+
+```
+{
+  'queries': ['Example query 1', 'Example query 2']  // List of up to five queries to search for.
+}
+```
+
+Carefully balance the number of `file_search` calls and the quality of your response with the latency incurred by `file_search` calls.
+
+Important guidelines for query formatting:
+
+- Your message must be a valid JSON object. Do not include any extraneous text, backticks, markdown formatting, or comments beyond what is shown.
+- The`queries` field must be a list of strings.
+- One of the queries**MUST** exactly match the user's original question, but stripped of any extraneous details, and with ambiguous references clearly resolved using context from the conversation. It**MUST** be a complete sentence.
+- Even if you suspect the user meant something else, one query**MUST** still be their original question.
+
+## How to handle results from file_search
+
+The file search tool will respond with the relevant search results from the full files. After you receive these results:
+
+- Carefully evaluate each result to determine its relevance and quality.
+- Use the high-quality and relevant results to inform your answer to the user's question.
+- When possible, reuse information from prior file_search results and avoid repeating identical queries.
+
+## Tool usage instructions and ordering
+
+When the user asks a question, carefully consider whether the provided snippets sufficiently answer the query, whether you need to invoke `file_search.msearch`, or another available tool (such as `web`, if available) should be used instead.
+
+Tool-ordering Guidelines:
+
+1. For queries related to uploaded files, if snippets are insufficient, strongly prefer invoking`file_search.msearch` over other tools.
+   - Avoid using`web.run`,`python` analysis, or any other tools until you have either:
+     - Confirmed with high confidence the answer is not in the files, or
+     - Have high confidence`file_search_tool` queries are not sufficient to answer the query.
+2. Avoid usage of`web_search/web.run` for queries related to uploaded files
+   - Carefully consider whether the user's query is better answered by web search results rather than available snippets or results from`file_search_tool`.
+   - Unless the user's query is clearly unrelated to the uploaded files, prefer using`file_search.msearch`. You can always follow up with a web search if necessary for a more complete response.
+3. Avoid using`python` unless necessary or requested by user.
+   - If the user's query is answerable from the parsed text and images from the uploaded files, or from`file_search_tool`, do not invoke`python`.
+
+Always keep this instruction in mind for the rest of the conversation, as the user may reference these files or ask related questions later on.
+
+# Output Example
+
+### 1 — High‑level signals
+
+| Theme                                         | Why it matters                                                                                                                                                  | Representative roadmap items                                                                                                                                                                                                                                          |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Copilot everywhere**                  | Copilot features span Outlook, Word, Excel, Edge, Teams, OneDrive and the compliance stack—so license planning and data‑governance rules will need attention. | • Controls to block XPIA‑risk external mail from Copilot chat citeturn1file1`<br>`• DLP rule to stop Copilot processing of labelled e‑mails citeturn1file16  `<br>`• Edge “Find on Page” integrated with Copilot chat citeturn1file16 |
+| **SharePoint & files modernisation**    | Focus on easier intake, approval and protection of documents.                                                                                                   | • Native forms in Document Libraries (GA Jul 2025) citeturn1file0`<br>`• Approvals workflow baked into libraries (GA Jan 2025) citeturn1file5                                                                                                    |
+| **Outlook usability on every platform** | Mobile and the new Windows client gain long‑requested folder and PST capabilities.                                                                             | • Create / rename / move folders on iOS & Android (GA Jun 2025) citeturn1file1`<br>`• Full PST‑file management in new Outlook for Windows (GA Jan 2025) citeturn1file4                                                                          |
+| **Developer / data tooling**            | Low‑code makers and BI teams will care.                                                                                                                        | • Python in Excel extended to E1/Business Basic licences (GA TBD 2025) citeturn1file4                                                                                                                                                                       |
+| **Security, compliance & IRM**          | Purview keeps expanding into Teams, XDR and Fabric.                                                                                                             | • Insider‑Risk alerts surface in Defender XDR (GA Jun 2025) citeturn1file5                                                                                                                                                                                 |
+
+---
+
+### 2 — Key upcoming GA dates (April → July 2025)
+
+| GA Month             | Feature                                                                                                               | Product / Area                  | Quick impact check                                                                       |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------------------------- |
+| **April 2025** | Migration Tool for third‑party channels → Teams                                                                   | Teams Admin                     | Plan cut‑over for legacy platforms citeturn1file7                                |
+| **May 2025**   | “Agents in OneDrive” to build AI over your own files                                                                | OneDrive & Copilot              | Confirm Copilot M365 licence holders and data‑residency needs citeturn1file11    |
+| **June 2025**  | • Folder ops on Outlook mobile `<br>`• Copilot XPIA‑risk controls `<br>`• Edge Find‑on‑Page + Copilot | Outlook / Compliance / Edge | Update mobile policy docs; adjust mail‑control rules citeturn1file1turn1file16 |
+| **July 2025**  | Native Forms in SharePoint Document Libraries                                                                         | SharePoint                      | Evaluate if this replaces Power Apps capture forms citeturn1file0                |
+
+---
+
+### 3 — Action items for your project team
+
+1. **Triage by workload** – Route each roadmap item to the relevant product‑owner or CoE lead (e.g., Security, Modern Work, Power Platform).
+2. **Create a “watch list” for GA ≤ 6 months** – The table above can be your seed list. Add licence, policy, training and adoption tasks.
+3. **Automate feed ingestion** – If you’d like, I can wire an automation that pulls this RSS weekly and drops deltas into Planner or a Power BI dashboard; let me know.
+4. **Map to PL‑200 / PL‑300 study topics** – New SharePoint forms, Approvals in libraries and Python in Excel are perfect lab material for both exams.
+5. **Security sign‑off** – Copilot + Purview changes mean revisiting your sensitivity‑labelling matrix and DLP exemptions before June.
+
+### 1 — High‑level signals
+
+| Theme                                         | Why it matters                                                                                                                                                  | Representative roadmap items                                                                                                                                                                                                                                          |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Copilot everywhere**                  | Copilot features span Outlook, Word, Excel, Edge, Teams, OneDrive and the compliance stack—so license planning and data‑governance rules will need attention. | • Controls to block XPIA‑risk external mail from Copilot chat citeturn1file1`<br>`• DLP rule to stop Copilot processing of labelled e‑mails citeturn1file16  `<br>`• Edge “Find on Page” integrated with Copilot chat citeturn1file16 |
+| **SharePoint & files modernisation**    | Focus on easier intake, approval and protection of documents.                                                                                                   | • Native forms in Document Libraries (GA Jul 2025) citeturn1file0`<br>`• Approvals workflow baked into libraries (GA Jan 2025) citeturn1file5                                                                                                    |
+| **Outlook usability on every platform** | Mobile and the new Windows client gain long‑requested folder and PST capabilities.                                                                             | • Create / rename / move folders on iOS & Android (GA Jun 2025) citeturn1file1`<br>`• Full PST‑file management in new Outlook for Windows (GA Jan 2025) citeturn1file4                                                                          |
+| **Developer / data tooling**            | Low‑code makers and BI teams will care.                                                                                                                        | • Python in Excel extended to E1/Business Basic licences (GA TBD 2025) citeturn1file4                                                                                                                                                                       |
+| **Security, compliance & IRM**          | Purview keeps expanding into Teams, XDR and Fabric.                                                                                                             | • Insider‑Risk alerts surface in Defender XDR (GA Jun 2025) citeturn1file5                                                                                                                                                                                 |
+
+---
+
+### 2 — Key upcoming GA dates (April → July 2025)
+
+| GA Month             | Feature                                                                                                               | Product / Area                  | Quick impact check                                                                       |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------------------------- |
+| **April 2025** | Migration Tool for third‑party channels → Teams                                                                   | Teams Admin                     | Plan cut‑over for legacy platforms citeturn1file7                                |
+| **May 2025**   | “Agents in OneDrive” to build AI over your own files                                                                | OneDrive & Copilot              | Confirm Copilot M365 licence holders and data‑residency needs citeturn1file11    |
+| **June 2025**  | • Folder ops on Outlook mobile `<br>`• Copilot XPIA‑risk controls `<br>`• Edge Find‑on‑Page + Copilot | Outlook / Compliance / Edge | Update mobile policy docs; adjust mail‑control rules citeturn1file1turn1file16 |
+| **July 2025**  | Native Forms in SharePoint Document Libraries                                                                         | SharePoint                      | Evaluate if this replaces Power Apps capture forms citeturn1file0                |
+
+---
+
+### 3 — Action items for your project team
+
+1. **Triage by workload** – Route each roadmap item to the relevant product‑owner or CoE lead (e.g., Security, Modern Work, Power Platform).
+2. **Create a “watch list” for GA ≤ 6 months** – The table above can be your seed list. Add licence, policy, training and adoption tasks.
+3. **Automate feed ingestion** – If you’d like, I can wire an automation that pulls this RSS weekly and drops deltas into Planner or a Power BI dashboard; let me know.
+4. **Map to PL‑200 / PL‑300 study topics** – New SharePoint forms, Approvals in libraries and Python in Excel are perfect lab material for both exams.
+5. **Security sign‑off** – Copilot + Purview changes mean revisiting your sensitivity‑labelling matrix and DLP exemptions before June.
+
+---
+
+### 4 — About the other file
+
+`ComprehensiveLogs_FilePathCheck.zip` wasn’t accessible through the file‑search interface. If you need that analysed too, just unzip it or re‑upload the specific documents, and I’ll dive in.
+
+---
+
+Let me know which parts you’d like to drill into—licence impact, change‑management playbooks, or a BI‑style dashboard of roadmap items—and we can build it.
+Resume Analysis Help
+user
+Can you help me analyze my resume?
+ChatGPT
+Absolutely, I'd love to help! You have **two options** to get started:

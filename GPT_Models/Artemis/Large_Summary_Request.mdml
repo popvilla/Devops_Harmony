@@ -1,0 +1,26 @@
+										##---Template For Submission:
+#Mode: (Review)
+#Context: (Details of heavy query request)
+#Priority: (Normal)
+#ActionType: (Scaffold, Summarize, Reflect, Execute)
+#TargetZone: (Folder or Project)
+#SpecialNotes: (Optional special handling)
+
+---
+
+Prompt:
+
+
+
+
+#Mode: (Synthesize)
+#Context: (Short purpose statement)
+#Priority: (Critical, High, Normal, Low)
+#ActionType: (Scaffold, Summarize, Reflect, Execute)
+#TargetZone: (Folder or Project)
+#SpecialNotes: (Optional special handling)
+
+
+---
+
+Prompt:

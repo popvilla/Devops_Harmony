@@ -1,0 +1,11 @@
+Agent_Team
+
+
+I will generate a compact, sharable payload that includes:
+- 🧭 Your **vision** and build philosophy (Jarvis, FinLit, Data Architect)
+- 🧱 The **tech stack**: Power Platform, Python, JSON-to-ZIP, Power BI, semantic DAX
+- 🧩 The **module roles**:
+   - 🧠 *Planner GPT* (architectural framing, philosophical grounding)
+   - ⚙️ *Builder GPT* (PowerApps, Python scripts, workflows)
+   - 🧪 *Researcher GPT* (component feasibility, system theory, DevOps practice)
+- 🧬 A **looping protocol**: What feeds back into what, what you want returned, where outputs go

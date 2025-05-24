@@ -1,0 +1,10 @@
+"0","import pandas as pd"
+"0","df = pd.read_excel(""quantum_sales_data.xlsx"")"
+"0","df.head()"
+"1","      Product Region Quarter  Units_Sold  Revenue  Signal  Noise
+0   NeuroLite   West      Q1          87  2147.21   1.065  0.305
+1   NeuroLite   East      Q3         113  4466.51   0.911 -0.082
+2  PhotonCore  South      Q4         126  2546.71   1.146  0.308
+3  PhotonCore  North      Q3          99  4872.05   0.947 -0.023
+4   NeuroLite  South      Q2         100  3400.29   1.014 -0.007
+"

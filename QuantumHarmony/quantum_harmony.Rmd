@@ -1,0 +1,119 @@
+---
+title: 
+---
+
+```{mermaid}
+
+```
+
+# Quantum Harmony: The Qwest for Entanglement
+
+This document guides you through a multi-language BI and data science
+journey using: - R for analysis & visualization - M for Power Query
+transformations - DAX for modeling in Power BI - Python for
+forecasting
+
+----------------------------------------------------------------------
+
+## Part 1 – R (Wrangling & Visualization)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+library(lubridate)
+```
+
+### Load and Inspect
+
+```{r}
+sales_data <- read_excel("quantum_sales_data.xlsx")
+glimpse(sales_data)
+```
+
+### Transform
+
+```{r}
+sales_data <- sales_data %>%
+  mutate(Date = as.Date(Date), Month = floor_date(Date, "month"))
+```
+
+### Summarize
+
+```{r}
+sales_summary <- sales_data %>%
+  group_by(Product, Month) %>%
+  summarise(Total_Sales = sum(Sales), .groups = "drop")
+```
+
+### Visualize
+
+```{r}
+ggplot(sales_summary, aes(Month, Total_Sales, color = Product)) +
+  geom_line() +
+  labs(title = "Sales by Product over Time") +
+  theme_minimal()
+```
+
+----------------------------------------------------------------------
+
+## Part 2 – M (Power Query Logic)
+
+```         
+let
+  Source = Excel.Workbook(File.Contents("quantum_sales_data.xlsx")),
+  Sheet = Source{[Name="Sheet1"]}[Content],
+  Promoted = Table.PromoteHeaders(Sheet),
+  Changed = Table.TransformColumnTypes(Promoted,
+    {{"Date", type date}, {"Region", type text}, {"Product", type text}, {"Sales", Int64.Type}})
+in
+  Changed
+```
+
+----------------------------------------------------------------------
+
+## Part 3 – DAX (Power BI Measures)
+
+``` dax
+Total Sales = SUM(Sales[Sales])
+
+Sales Growth % =
+VAR CurrentMonth = MAX(Sales[Date])
+VAR PrevMonth = EDATE(CurrentMonth, -1)
+VAR SalesNow = CALCULATE(SUM(Sales[Sales]), Sales[Date] = CurrentMonth)
+VAR SalesPrev = CALCULATE(SUM(Sales[Sales]), Sales[Date] = PrevMonth)
+RETURN DIVIDE(SalesNow - SalesPrev, SalesPrev)
+```
+
+----------------------------------------------------------------------
+
+## Part 4 – Python (Forecasting)
+
+```{python}
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+df = pd.read_excel("quantum_sales_data.xlsx")
+df['Date'] = pd.to_datetime(df['Date'])
+df['Month'] = df['Date'].dt.to_period("M").dt.to_timestamp()
+
+df_product = df[df['Product'] == "Alpha Serum"]
+monthly_sales = df_product.groupby("Month")["Sales"].sum().reset_index()
+monthly_sales['Month_Num'] = (monthly_sales['Month'] - monthly_sales['Month'].min()).dt.days
+
+X = monthly_sales[['Month_Num']]
+y = monthly_sales['Sales']
+model = LinearRegression().fit(X, y)
+
+next_month = monthly_sales['Month_Num'].max() + 30
+forecast = model.predict([[next_month]])
+print(f"Forecast for next month: {forecast[0]:.2f}")
+```
+
+----------------------------------------------------------------------
+
+## 🌌 Reflections
+
+What harmonies do you notice between R, Python, M, and DAX? How does
+each language complement the others in your workflow?
+

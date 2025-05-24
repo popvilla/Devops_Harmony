@@ -1,0 +1,3 @@
+```{r}
+# Quantum Harmony Notebook (R + Python)
+```

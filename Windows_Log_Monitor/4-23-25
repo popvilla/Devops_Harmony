@@ -1,0 +1,98 @@
+##### 🧠 MyBrainsHouse AI Project Tracker
+
+Welcome to the project tracker notebook for
+**MyBrainsHouse/GPT_Logs**. Use this space to document and monitor all
+aspects of your AI development process.
+
+----------------------------------------------------------------------
+
+## 1. Project Overview
+
+**Project Title**: Speech Parser for Note Taking\
+**Created On**: 4/23/25\
+**Author**: Prinston And GPT\
+**Description**: Process to take notes at the pace of Automation\
+*Short summary of the project's goal and scope.*
+
+As a system architect working with GPTs as Developer it is crucial to
+remove as much latenecy as possible to allow proper iteration but the
+time should be taken to review and access
+
+----------------------------------------------------------------------
+
+```{=html}
+2. Objectives & Milestones
+```
+
+| Milestone | Description | Status | Deadline | Notes |
+|----|----|----|----|----|
+| Setup | Initialize project structure and dependencies | ☐ In progressSS |  | Modules are loaded Tables created |
+| Data Prep | Acquire and preprocess data | ☐ |  |  |
+| Model Dev | Build and train initial model | ☐ |  |  |
+| Evaluation | Test and validate performance | ☐ |  |  |
+| Deployment | Deploy model or create final report | ☐ |  |  |
+
+----------------------------------------------------------------------
+
+## 3. Dataset Details
+
+**Data Sources**:\
+**Preprocessing Steps**:\
+**Data Format**:\
+**File Locations**:\
+- `Chatlog-4-22-25/` - `Chatlog-4-23-25/` -
+`quantum_harmony_filemap.csv` - Other files from `.Rproj.user` and
+`QuantumHarmony_Starter`
+
+----------------------------------------------------------------------
+
+## 4. Model Development
+
+``` python
+# Placeholder for model development code
+# Example: Load data, preprocess, train model, evaluate
+
+# Example: Import packages
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+```
+
+----------------------------------------------------------------------
+
+## 5. Experiments & Results
+
+| Experiment | Parameters | Accuracy | Precision | Recall | Notes |
+|------------|------------|----------|-----------|--------|-------|
+| Exp 1      | [params]   | \%       | \%        | \%     |       |
+| Exp 2      | [params]   | \%       | \%        | \%     |       |
+
+----------------------------------------------------------------------
+
+## 6. Issues & Debugging Logs
+
+| **Date** | **Issue** | **Resolution** | **Notes** |
+|----------|-----------|----------------|-----------|
+|          |           |                |           |
+
+----------------------------------------------------------------------
+
+## 7. Next Steps
+
+-   [ ] Complete data cleaning
+-   [ ] Train first model
+-   [ ] Document model performance
+-   [ ] Prepare for deployment/reporting
+
+----------------------------------------------------------------------
+
+## 8. Resources & References
+
+-   Documentation links
+-   Research papers
+-   Other helpful notes
+
+----------------------------------------------------------------------
+
+*Keep this notebook updated as you progress through your project.*

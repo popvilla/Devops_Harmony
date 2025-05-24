@@ -1,0 +1,16 @@
+**Quantum Harmony Bundle File Overview**
+
+| File                          | Location      | Purpose                                                       |
+|------------------------------|----------------|---------------------------------------------------------------|
+| README.txt                   | root (/)       | Your narrative and guidepost.                                 |
+| QuantumHarmony.Rproj         | root (/)       | RStudio project configuration.                                |
+| setup_instructions.R         | scripts/       | R and Python environment setup.                               |
+| setup_R_packages.R           | scripts/       | Install R packages used in notebooks.                         |
+| setup_python_env.py          | scripts/       | Python environment setup using virtualenv or conda.           |
+| part1_unfolding.qmd          | notebooks/     | Quarto doc – Intro & conceptual foundation.                   |
+| part2_layers.qmd             | notebooks/     | Quarto doc – Layered modeling.                                |
+| part3_shifts.qmd             | notebooks/     | Quarto doc – Temporal or state-based transitions.             |
+| part4_visualization.qmd      | notebooks/     | Quarto doc – Visualization with R & Python.                   |
+| quantum_sales_data.xlsx      | data/          | Seed test data (anonymized if needed).                        |
+| language_cheat_sheet.pdf     | docs/          | Quick syntax reference.                                       |
+| quantum_progress_tracker.pdf | docs/          | Self-tracking for mastery.                                    |

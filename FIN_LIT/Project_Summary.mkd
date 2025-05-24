@@ -1,0 +1,273 @@
+# Summary
+
+This document outlines the development of an interactive finance literacy training application designed for students and instructors. The app will simulate investment scenarios, allowing students to manage mock funds while receiving guidance from instructors through webinars and visual tools.
+
+•    User Roles Defined: The document identifies four key user roles: students, instructors, admins, and a chatbot. Each role has specific actions and purposes, contributing to the overall educational experience.&#x20;
+
+•    Student Interaction: Students will receive mock investment funds, track their portfolios, make investment decisions, and participate in webinars to enhance their financial literacy.&#x20;
+
+•    Instructor Functions: Instructors will provide tools, conduct webinars, monitor student progress, and simulate market events to enrich the learning environment.&#x20;
+
+•    Administrative Oversight: Admins will manage user accounts, oversee app performance, update resources, and generate reports to ensure effective operation of the application.&#x20;
+
+•    Chatbot Support: The chatbot will assist users by providing information on finance topics, navigating the app, responding to queries, and simulating market events.&#x20;
+
+•    Data Management: The application will utilize various data tables to store information about users, portfolios, webinars, and app performance, facilitating effective tracking and management.&#x20;
+
+•    User Experience: The document describes several applications and flows designed for students, instructors, and admins to ensure a seamless user experience.&#x20;
+
+Public Access: Sign-ups for the app will be available to the public through a webpage, promoting accessibility for all interested learners.&#x20;
+
+Prompt
+
+I would like to deploy a finance literacy training app with interactivity. Students will be given mock investment funds and simulate investing and tracking portfolio. Instructors will walk students through use of tools and be teaching webinars on certain concepts.  Investment decisions should be modeled out in visuals and charts. Ability to simulate market events and impact on portfolio, tracker and generate simulated stock prices and trading exchange.  The activity should be linked back to students page where they can track all their info. Student signup open to all public and should be a webpage
+
+Business problem
+
+The goal is to develop an interactive finance literacy training application. Users will receive virtual investment funds and simulate investments, monitoring their portfolios. Instructors will provide guidance using various tools and webinars on essential concepts. Investment decisions will be explained with visual aids and charts. The application will generate market events, produce stock prices, and display trading exchanges, linked to each user's page for tracking information. Signups will be accessible to the public via a webpage.
+
+Purpose of this plan
+
+This plan details the approach to solving the business problem. It includes a review of user roles and tasks, followed by identifying required resources such as tables, applications, workflows, and agents.
+
+User Roles
+
+Student&#x20;
+
+&#x9;Description
+
+Person who participates in the finance literacy training. In order to become a student one has to first submit an application through the powerpages signup which is open to  the public and does not require any user information to sign in. once the application is reviewed then the user will get an email notification with their login details which will provide a one time passwordfor them to access the workspace and then set up their own password. Upon setting up their account the applicant is moved to the student table and then gains the student user access to the application.&#x20;
+
+As a student I would like to do the following
+
+Activity  Power Platform tool Purpose
+
+Receive mock investment funds Bank  Application   Students receive funds into their mock bank account which will represent Initial capital for trading activity. This will also be the initial portfolio value.  Used in the exchange app as funds.
+
+Track my portfolio       As a user of the Financial literacy application I want navigate to my portfolio application which will provide me all details about its value and performance. This will include interactive charts and visuals to review my progress over time. Ability to interact with copilot bot agent to answer questions about how to use application and also how guide student through understanding their various components of their portfolio.
+
+Make investment decisions          With the knowledge I have gained through participating in the program I will execute trades in the mock exchange.  Based on companies criteria, and stock profile, news  Macroeconomic factors introduced by the instructor.
+
+View visuals and charts       Visualize an assets price movement over time through the Exchange application. And other investment metrics and trends
+
+Receive guidance from instructors       Improve my financial literacy through participating in the interactive webninar sessions and completing the assigned tasks to monitor and grow my portfolio while gaining real world knowledge and insight.&#x20;
+
+Participate in webinars  Student Application Log into Student app and watch webinar live or recorded session.Live session has zoom conference.  Webinar access comes along with the&#x20;
+
+Simulate market events   Student Application
+
+Portfolio  Application   Experience real-world financial scenarios. Admin and Instructor will coordinate to deploy news and adjust exchange details to align with basic corp action items and positions will need to adjust accordingly
+
+View stock prices and trading exchanges      Through my access to the exchange application&#x20;
+
+Access my personalized page        Track my investment information through the portfolip application&#x20;
+
+Provide feedback on topics of investment that would be beneficial     &#x9;
+
+Instructor
+
+&#x9;Description:
+
+Person who is responsible for leading the webinar or training session with students, working with Admin to detail any tools they need to lead session if not already available&#x20;
+
+User Actions:
+
+Activity  Purpose
+
+Conduct webinars on key concepts    Leads the training session and introduces the application to students.&#x20;
+
+Illustrate investment decisions with visuals and charts     Demonstrates the relevant application feature that is topic of that webinar sessions&#x20;
+
+Monitor student progress Can review the progress of each student and offer a more personalized feedback outside of webinar opportunities&#x20;
+
+Work with Admin to develop webinar and supporting tools     Detail lesson needs to admin to build into App. Review feedback from students and relay this to admin to be sure the application is ready for their needs
+
+Instructors are volunteers who signup through the same portal space as the student&#x9;
+
+&#x9;
+
+&#x9;
+
+Application Reviewer
+
+&#x9;Description:
+
+Reviews student application for completeness and specific criteria needed for student to participate
+
+User Actions:
+
+Activity  Purpose
+
+Monitor application submissions by students that come in through powerpages     Works with applicants table to approve/reject/follow up with applicant during onboarding process. Once approved they will update status of applicant and this will move record to the student table and allow student access to the application
+
+Access to all student and instructor tables to allow updates and answer queries that may arise in the first use of application    Onboarding rep
+
+&#x9;
+
+Admin
+
+&#x9;Description:
+
+Manage and issue resolution
+
+User Actions:
+
+Activity  Purpose
+
+Manage user accounts     Ensure security and proper functioning of the app
+
+Oversee the app's performance Address technical issues promptly
+
+Update content and resources  Provide latest information to students and instructors
+
+Generate reports on app usage Analyze engagement and effectiveness
+
+Coordinate with instructors   Integrate webinars and tools into the app
+
+Providing tools for students  Learn effectively
+
+Generate stock prices and trading exchanges  Experience realistic simulations
+
+Link trading exchanges to each student's page     Track their information
+
+Data Tables
+
+Table Name     Description
+
+Student   Stores information about students who participate in the finance literacy training. Only those listed on this table will have access to Student sections and further interaction with app.  The GUID representing the student should be foreign key of the related tables. This is part of the Key identifier, as it will be a unique student executing throughout environment so other tables should create a record and have this attributed to that record always. Criteria relating to student status or instructor feedback and user name association. Contact details should be represented here.
+
+Instructor     Stores information about instructors who guide students and conduct webinars.  Tracks the instructors sessions orchestrated, topic attendance. Time availability, area of expertise. Members of this table will have mid tier access and be able to see the student table and portfolio information of those they instruct.   Table should track members of instructors cohort if the class is ongoing over time with same group.
+
+Admin     Stores information about admins who manage the app and oversee its performance.  Members of this table will have Global Reader access
+
+Chatbot   Stores information about the automated system that interacts with users. Including the queries entered by the student and the response from the GPT. Feedback can be provided in either multi line text input detail good or bad experience and rate 1-5.  Table should have scoring logic associated with model to track how often model is correct and helpful so admin can refine the bot in line with the feedback provided.
+
+Portfolio Stores details of the student's investment portfolio including decisions, visuals, market events, stock prices, and trading exchanges.
+
+Webinar   Stores information about webinars conducted by instructors. Attendance Topic details. Store video recording  of webinar and other media types that will be used in the interactive session
+
+Investment Decision Stores details of investment decisions made by students. Table containing all historical Exchange, Banking and financial outcomes related to any Market events&#x20;
+
+Corpaction     Stores details of corporate action or news event that will impact the trading activity and require student to react to the event in accordance with their portfolio strategy. &#x20;
+
+Macro Event    Stores information about simulated market events and news articles and videos that will impact value of assets in portfolio
+
+Stock Price    Stores information about stock prices linked to student portfolios.
+
+Trading Exchange    Stores information about trading exchange that students interact with and execute trades. This will represent buy and sell prices execution amounts traded volume  and daily pricing display
+
+User Account   Stores information about user accounts including role and status.
+
+App Performance     Stores metrics related to the app's performance.&#x20;
+
+Content Resource    Stores information about content and resources available in the app. Stores documents pdfs videos audio recordings hyperlinks and access to other applets within portal
+
+Report    Stores reports generated by admins on app usage and engagement.
+
+Interaction    Stores details of interactions between users and the chatbot.
+
+Approval Criteria   Details approval criteria, applicants who don’t meet minimum can be rejected by bot, approved if good and flagged for review if it is unsure. Approval Status validated my admin/instructor before addition to student table. Bot scored on approvals/rejects human validates or rejects.&#x20;
+
+Student feedback    Table to hold feed back from various apps consolidated into one place for admin and instructor review. The user id should be included with submission for lookup reference
+
+Application Submission   Stores information about student application submissions to the webpage entry as prospective student. Admin instructor, automated flow or business rules to dictate approval of applicant. Once approved the applicant information is brought over to the student table and welcome email is generated. – this table takes in external data and should be extra secured
+
+User experiences
+
+These objects will address the needs of your users. They'll see or use them to get things done.
+
+App  Type Status    Description
+
+Investment App Model Drive app     New  This application provides users with an interface to purchase simulated stocks and bonds mirroring real-world structures. It includes a portal for entering orders and executing them within the app, which results in updates to the students’ portfolio and records their investment decisions. The application allows users to view price changes of selected assets visualized in charts and line graphs, replicating ticker symbols. The app is maintained by an administrator who monitors a process that generates stock prices and the relevant buy and sell prices offered. The exchange will be open for a set period each day, during which all trading execution takes place within the app and is represented in the relevant tables.
+
+Instructor Guidance App  Model-driven app    New  This application provides instructors with tools for teaching and reviewing student progress. It includes views of student portfolios, webinar participation, and feedback to improve future webinars and tools. Instructors can manage teams chat and access course resources, collaborate through teams chat, and screen share during video calls. Students cannot interact directly with the application.
+
+Admin Management App     Model-driven app    New  An application for administrators to manage user accounts, oversee app performance, update content, generate reports, and coordinate with instructors. It tracks external-facing tables for any malicious intrusions or issues reported. This application is continually developed and enhanced, along with user control features. It monitors processes that generate exchange data.
+
+Flow Type Status    Description
+
+Chatbot Interaction Flow Power Automate flow New  Automated flow for the chatbot to provide information, assist users, respond to queries, simulate market events, and track interactions. All feedback details from the chatbot should be tracked on table.&#x20;
+
+Student Signup Flow Power Automate flow New  Automated flow for students to sign up through a webpage and submit their application for the finance literacy training. Submission triggers alert to the student to validate the email address provided once the validation is sent back. This should then alert application reviewer and admin that a new user submission has come in&#x20;
+
+Calculations/Measures
+
+&#x20;Student Table Use case
+
+│   ├── Portfolio Value&#x9;
+
+│   ├── Net Growth %&#x9;
+
+│   ├── Time to First Investment&#x9;
+
+│   ├── Rank vs Peers&#x9;
+
+├── Instructor Table     Use case
+
+│   ├── Class Avg Return&#x9;
+
+│   ├── Webinar Attendance Rate&#x9;
+
+│   ├── Topic Gaps&#x9;
+
+├── Admin table     Use case
+
+│   ├── Sessions Per Day&#x9;
+
+│   ├── Avg Queries per User&#x9;
+
+│   ├── Volatility Index&#x9;
+
+├── Interactions Table   Use case
+
+│   ├── Interaction Count&#x9;
+
+│   ├── Chatbot Topic Hits&#x9;
+
+Relationship
+
+From Table     To Table  From\_Field         To\_TBL\_Field Type
+
+Portfolio Student   Student        StudentID Many → One
+
+InvestmentDecision  Portfolio           PortfolioID    Many → One
+
+MarketEvent    InvestmentDecision            EventID   Many → One
+
+Webinar   Instructor               InstructorID   Many → One
+
+StockPrice     InvestmentDecision            TickerSymbol   Many → One
+
+TradingExchange     StockPrice               ExchangeID     Many → One
+
+Current Gaps in Build
+
+Area Gap / Risk     Recommendation
+
+Technical Stack Details  Missing specifics on technology choices (e.g., hosting, database engines, CI/CD).    Define Azure services (e.g., Dataverse, Functions, Web Apps), security model, and deployment pipeline.
+
+Security & Compliance    RLS/OLS mentioned briefly, but no detail on authentication, data privacy (especially for minors).   Add an “Authentication & Security” section: Azure AD roles, GDPR/FERPA compliance, encryption.
+
+Simulated Market Logic   Market event simulation logic is high level; unclear how price feeds or randomization work.    Specify algorithms or services (e.g., Azure ML model for price simulation, event scheduling logic).
+
+UX & Accessibility  User experience flows are noted but no wireframes, accessibility standards, or performance SLAs.    Include clickable prototypes or wireframes; reference WCAG 2.1 guidelines and performance targets.
+
+Instructor Tools    Tools instructors need for creating/scheduling events and uploading content aren’t fully detailed.  Define a “Webinar Management” component: content staging, versioning, and analytics dashboard.
+
+Reporting & Analytics    “Report” tables exist, but specifics on dashboards, KPIs, and export formats are absent.  Outline a Power BI workspace: key dashboards (engagement, learning outcomes), refresh schedules.
+
+&#x20;
+
+Azure Rebuild
+
+Area Feature   Risk/Opportunity    Response
+
+Dataverse tables exposed via OData Navigation flattening issue   Power BI or TE relationships could break silently Add schema validator or test query suite in Dataflows
+
+Copilot prompt-scoped security     Label-based exclusions now honored You’re ahead of this—already treating prompts semantically  Add Copilot “prompt scope check” field per table
+
+Purview DLP on SharePoint + Teams  Leakage risk in report sharing or Teams Copilot   Secure your Power BI dashboards with data classification    Leverage Purview to track access to semantic datasets
+
+Graph API CRUD on Loop, Viva  Event creation/logging could be exploited    Use DevOps pipelines to track schema syncs that trigger Graph events  Create anomaly monitor for schema-triggered Copilot behavior
+
+&#x20;

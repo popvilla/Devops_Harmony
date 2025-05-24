@@ -1,0 +1,3 @@
+"0","library(readxl)"
+"0","df <- read_excel(""quantum_sales_data.xlsx"")"
+"0","head(df)"

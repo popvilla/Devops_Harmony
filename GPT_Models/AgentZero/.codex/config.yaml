@@ -1,0 +1,5 @@
+
+model: o4-mini
+approvalMode: ask-user
+notify: true
+fullAutoErrorMode: ignore-and-continue

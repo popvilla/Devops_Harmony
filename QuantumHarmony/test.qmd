@@ -1,0 +1,55 @@
+---
+title: "test"
+format: html
+editor: visual
+---
+
+#!/bin/bash
+
+echo "🔍 Checking Codex CLI readiness..."
+
+score=0 total=6
+
+check() { echo -n "\$1... " if eval "\$2"; then echo "✅" ((score++))
+else echo "❌" fi }
+
+# Check OS
+
+OS=$(uname -s)
+if [[ "$OS" == "Linux" \|\| "\$OS" == "Darwin" \]\]; then echo "🖥️ OS
+detected: \$OS ✅" ((score++)) else echo "🖥️ OS detected: \$OS ❌
+(Codex CLI works best on Linux/macOS or WSL2)" fi
+
+# Check Node.js
+
+check "Node.js installed" "command -v node \>/dev/null && node -v \|
+grep -q 'v'"
+
+# Check npm
+
+check "npm installed" "command -v npm \>/dev/null && npm -v \| grep -q
+'[^1]'"
+
+[^1]: 0-9
+
+# Check Git
+
+check "Git installed" "command -v git \>/dev/null && git --version \|
+grep -q 'git version'"
+
+# Check GitHub CLI (optional)
+
+check "GitHub CLI (gh) installed (optional)" "command -v gh
+\>/dev/null"
+
+# Check OpenAI API key
+
+check "OpenAI API Key set" "\[\[ -n \$OPENAI_API_KEY \]\] \|\| grep -q
+'OPENAI_API_KEY' .env 2\>/dev/null"
+
+echo "" echo "✅ $score/$total readiness checks passed."
+
+if \[ "$score" -eq "$total" \]; then echo "🚀 System is ready to
+install and use Codex CLI." elif \[ "\$score" -ge 4 \]; then echo "⚠️
+Mostly ready — consider fixing the missing items above." else echo "❌
+System not ready. Please install missing tools before proceeding." fi

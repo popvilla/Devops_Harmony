@@ -1,0 +1,33 @@
+Version: 1.0
+ProjectId: 95c8695d-fbe5-47a2-aa61-578ad7e11969
+
+RestoreWorkspace: No
+SaveWorkspace: Yes
+AlwaysSaveHistory: Default
+
+EnableCodeIndexing: Yes
+UseSpacesForTab: No
+NumSpacesForTab: 2
+Encoding: US
+
+RnwWeave: Sweave
+LaTeX: LuaLaTeX
+
+StripTrailingWhitespace: Yes
+LineEndingConversion: Windows
+
+UseNativePipeOperator: Yes
+
+QuitChildProcessesOnExit: Yes
+DisableExecuteRprofile: Yes
+
+MarkdownWrap: Column
+MarkdownWrapAtColumn: 70
+MarkdownReferences: Document
+MarkdownCanonical: Yes
+
+PythonType: system
+PythonVersion: 3.13.3
+PythonPath: C:/Users/Kidpr/AppData/Local/Programs/Python/Python313/python.exe
+
+SpellingDictionary: en_US
