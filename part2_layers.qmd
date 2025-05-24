@@ -1,0 +1,28 @@
+
+---
+title: "Part 2: Seeing Through Layers"
+format: html
+editor: visual
+---
+
+## 🧼 Filtering and Transformation (Python)
+
+```{python}
+q2_data = df[df['Quarter'] == 'Q2']
+q2_data.groupby("Product")["Revenue"].sum()
+```
+
+## 🧼 Filtering and Transformation (R)
+
+```{r}
+library(dplyr)
+df %>%
+  filter(Quarter == "Q2") %>%
+  group_by(Product) %>%
+  summarise(TotalRevenue = sum(Revenue))
+```
+
+## 🧠 Reflect
+
+> What insights emerge when filtering the data?
+> Why is this technique useful?
