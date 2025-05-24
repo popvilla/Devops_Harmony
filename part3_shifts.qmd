@@ -1,0 +1,28 @@
+---
+title: "Part 3: Quantum Shifts"
+format: html
+editor: visual
+---
+
+## 🌀 Aggregation and Insight (Python)
+
+```{python}
+summary = df.groupby(["Quarter", "Product"]).agg({
+    "Revenue": "sum",
+    "Units_Sold": "mean"
+})
+summary
+```
+
+## 🌀 Aggregation and Insight (R)
+
+```{r}
+df %>%
+  group_by(Quarter, Product) %>%
+  summarise(Revenue = sum(Revenue), Units = mean(Units_Sold))
+```
+
+## 🧠 Reflect
+
+> What changes when grouping is applied?
+> Where do you notice balance or imbalance in the data?

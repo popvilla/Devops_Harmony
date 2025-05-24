@@ -1,0 +1,26 @@
+---
+title: "Part 1: Unfolding the Fabric"
+format: html
+editor: visual
+---
+
+## 📂 Load the Data (Python)
+
+```{python}
+import pandas as pd
+df = pd.read_excel("quantum_sales_data.xlsx")
+df.head()
+```
+
+## 📊 Load the Data (R)
+
+```{r}
+library(readxl)
+df <- read_excel("quantum_sales_data.xlsx")
+head(df)
+```
+
+## 🧠 Reflect
+
+> What dimensions are present in the data?
+> What questions can this data help answer?

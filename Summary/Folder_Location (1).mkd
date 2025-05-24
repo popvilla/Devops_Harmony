@@ -1,0 +1,65 @@
+
+Github Projects/
+├── .Git/                         ← ✅ Git Repo Lives Here
+├── Quantumharmony-Learn/        ← Just A Normal Folder Now (Safe!)
+├── Windows_Log_Monitor/
+│   ├── Logs/
+│   ├── Outputs/
+│   ├── Scripts/
+│   ├── Readme.Md
+├── Compsuite/
+├── Notebooks/
+├── .Gitignore
+├── .Env
+└── Readme.Md
+```
+
+| File                                          | Content Type                     | Purpose                                                                                                                | Current Maturity                                           | Recommended Action                                                                                                    |
+| --------------------------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Gpt\_Log\_01.Json** / **Gpt\_Log\_02.Json** | Raw Chat Logs                    | Historical Planning, Project Decisions, Codex Cli Discussion, Architectural Reflections                                | High Value For Reconstructing Project Vision And Evolution | Summarize Key Architectural Decisions, Extract Reusable Planning Artifacts                                            |
+| **Project\_Summary.Pdf**                      | Formal Project Consolidation     | Summarized Your Python-Powerbi Pipeline, Jarvis Vision, Challenges With Context Fragmentation                          | Excellent, Professional-Grade                              | Integrate Directly Into Readme/Project Plan V1                                                                        |
+| **Episode1\_Qwest\_Begins\_Script.Txt**       | Narrative/Philosophy             | Highly Creative Philosophical Framing Of Your Journey With R/Python/Dax And Quantum Harmony Theme                      | Pure Gold For Branding And Storytelling                    | Use As **About The Project** Or Intro Blurb                                                                           |
+| **Codex.Md**                                  | Instructional/Specification File | How You Wanted Codex Cli To Operate Inside Git Repos — Agent Behavior And Sandbox Rules                                | Crucial For Future Ai Agent Orchestration Layer            | Integrate Into Github Repo Structure When Ready                                                                       |
+| **Project\_Summary\_Longform.Md**             | Extended Summary                 | Full-Length Philosophical + Technical Analysis: Jarvis Design, Pipeline Flow, Ops Challenges, Multiple Gpt Chat Issues | Canonical Source Material                                  | Extract Sections Directly Into Project Documentation (Divided Into “Vision”, “Architecture”, “Challenges”, “Roadmap”) |
+
+The_Quantum_Place/
+├── 1_Architecture/
+│   ├── README.md        # Master file describing the vision, goals, build status
+│   ├── Project_Summary.pdf  # Historical summary (locked version for audit trail)
+│   ├── Project_Summary_Longform.md # Full explainer - operational, technical, philosophical
+│   ├── episode1_qwest_begins_script.txt # Inspirational narrative framing (About the Project)
+│   ├── Architecture_Diagram.vsdx (optional, Visio/Draw.io file)
+│
+├── 2_Build/
+│   ├── Dataverse_Schemas/
+│   │   ├── Applicants_Table.md
+│   │   ├── Applications_Table.md
+│   │   ├── Grants_Table.md
+│   │   ├── Reviewers_Table.md
+│   │   └── Entity_Relationship_Diagram.png
+│   ├── PowerApps/
+│   │   ├── Applicant_Submission_App.msapp
+│   │   ├── Reviewer_Management_App.msapp
+│   ├── PowerPages/
+│   │   ├── Applicant_Portal_Site/
+│   │   └── Anonymous_Submission_Flow.md
+│   ├── Automations/
+│   │   └── Power_Automate_Flows.md
+│
+├── 3_AI_Orchestration/
+│   ├── Codex.md            # Defines Codex CLI behaviors
+│   ├── Agent_Architecture_Spec.md  # Future design for modular agents
+│   ├── Agent_CLI_Scripts/ (future folder for modular scripts)
+│
+├── 4_Data/
+│   ├── SampleData/
+│   │   ├── Applicant_Demo.csv
+│   │   ├── Applications_Demo.csv
+│   │   └── Reviewer_Demo.csv
+│
+├── 5_Deployment/
+│   ├── Setup_Guide.md
+│   ├── Live_Environment_Config.md
+│   └── Future Enhancements.md
+│
+└── LICENSE, CONTRIBUTING.md (for eventual public release if desired)

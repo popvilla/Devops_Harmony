@@ -1,0 +1,36 @@
+---
+output: 
+  html_notebook: 
+    toc: true
+editor_options: 
+  chunk_output_type: inline
+---
+
+# 📘 QuantumHarmony-Learn
+
+Welcome to the **learning layer** of the Quantum Harmony ecosystem.\
+This project is designed as a **self-guided, teachable companion** to the core Quantum Harmony build.
+
+It focuses on: - 🧠 Understanding tools (Git, Codex CLI, Quarto, RStudio) - 🧰 Running safe experiments (Python, logs, agents) - 📚 Learning by doing — tracking, logging, reflecting
+
+------------------------------------------------------------------------
+
+## 🗂️ Folder Overview
+
+| Folder | Description |
+|----|----|
+| `notebooks/` | `.qmd` files for learning, reflections, and journaling |
+| `scripts/` | Beginner-safe Python utilities to monitor or transform files |
+| `logs/` | Output from experiments (change logs, results, agent behavior) |
+| `.git/` | Version tracking system |
+| `.gitignore` | Prevents logs and sensitive files from being tracked |
+
+------------------------------------------------------------------------
+
+## ✅ First Steps
+
+1.  Open RStudio and this repo
+2.  Go to the `notebooks/` folder
+3.  Start with `Git_Tracking_Companion.qmd`
+4.  Try your first Git command:
+5.  \`\`\`bash git status git add . git commit -m "Initial learner setup"

@@ -1,0 +1,35 @@
+---
+title: "Part 4: Visualizing the Harmony"
+format: html
+editor: visual
+---
+
+## 🎨 Visual Exploration
+
+```{r}
+library(ggplot2)
+library(readxl)
+df <- read_excel("quantum_sales_data.xlsx")
+ggplot(df, aes(x=Quarter, y=Revenue, fill=Product)) +
+  geom_bar(stat="identity", position="dodge") +
+  theme_minimal()
+```
+
+## 🧠 Reflect
+
+> What trends do you notice across quarters?
+> What could explain the variance?
+
+## 🐍 Python Alternative
+
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_excel("quantum_sales_data.xlsx")
+sns.barplot(data=df, x="Quarter", y="Revenue", hue="Product")
+plt.title("Revenue by Quarter and Product")
+plt.tight_layout()
+plt.show()
+```
