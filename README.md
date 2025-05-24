@@ -40,15 +40,17 @@ Because we went together.
 
 ## 🛠 What’s Inside
 
-- `quantum_harmony.qmd` — hybrid R + Python Quarto notebook
-- `system_monitor_dev.qmd` — PowerShell + R for real-time system diagnostics
-- `GRANT_APPLICATION_TEMPLATE.qmd` — funder-ready submission scaffold
-- `notebooks/` — visual walkthroughs, journal-driven notebooks
-- `scripts/` — ETL, visualization, and environment setup scripts
-- `data/` — curated datasets for use across Power BI and Python
-- `docs/` — cheat sheets, progress trackers, and internal documentation
-- `PROMPT_HISTORY.md` — GPT + Copilot interaction archive
-- `QUANTUM_LOG.md` — development + learning changelog
+The repository currently contains a small set of notebooks that lay the
+groundwork for the Quantum Harmony concept:
+
+- `quantum_harmony.Rmd` — an early R Markdown draft blending multiple
+  languages for BI and data science
+- `part1_unfolding.qmd` — step one of the tutorial series: *Unfolding the Fabric*
+- `part2_layers.qmd` — continuing with *Seeing Through Layers*
+- `part3_shifts.qmd` — exploring *Quantum Shifts*
+- `part4_visualization.qmd` — wrapping up with *Visualizing the Harmony*
+
+Additional notebooks, scripts, and datasets will be added over time.
 
 Everything is tracked and structured as **living memory** — not just source code.
 
